@@ -18,6 +18,7 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
             <version>${testcontainers.version}</version>
+            <classifier>shaded</classifier>
         </dependency>
 
         <dependency>
