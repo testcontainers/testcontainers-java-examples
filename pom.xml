@@ -9,16 +9,26 @@
         <module>redis-backed-cache</module>
         <module>disque-job-queue</module>
         <module>selenium-container</module>
+        <module>clashing-deps-jackson</module>
     </modules>
 
     <packaging>pom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers</artifactId>
+                <version>${testcontainers.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>testcontainers</artifactId>
             <version>${testcontainers.version}</version>
-            <classifier>shaded</classifier>
         </dependency>
 
         <dependency>
@@ -79,5 +89,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <testcontainers.version>1.0.0-SNAPSHOT</testcontainers.version>
+        <!-- Older versions will encounter problems with the clashing-deps-* modules -->
+        <!--<testcontainers.version>0.9.9</testcontainers.version>-->
     </properties>
 </project>
