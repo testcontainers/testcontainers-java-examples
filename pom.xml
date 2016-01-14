@@ -10,6 +10,7 @@
         <module>disque-job-queue</module>
         <module>selenium-container</module>
         <module>clashing-deps-jackson</module>
+        <module>clashing-deps-jersey</module>
     </modules>
 
     <packaging>pom</packaging>
