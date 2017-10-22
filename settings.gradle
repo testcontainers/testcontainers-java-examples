@@ -1,0 +1,13 @@
+rootProject.name = 'testcontainers-java-examples'
+
+include ':redis-backed-cache'
+include ':disque-job-queue'
+include ':selenium-container'
+include ':spring-boot'
+include ':linked-container'
+
+project(':redis-backed-cache').projectDir = "$rootDir/redis-backed-cache" as File
+project(':disque-job-queue').projectDir = "$rootDir/disque-job-queue" as File
+project(':selenium-container').projectDir = "$rootDir/selenium-container" as File
+project(':spring-boot').projectDir = "$rootDir/spring-boot" as File
+project(':linked-container').projectDir = "$rootDir/linked-container" as File

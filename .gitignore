@@ -33,6 +33,12 @@ buildNumber.properties
 # Gradle:
 # .idea/gradle.xml
 # .idea/libraries
+build/
+.gradle
+
+# Selenium:
+password
+*.flv
 
 # Mongo Explorer plugin:
 # .idea/mongoSettings.xml

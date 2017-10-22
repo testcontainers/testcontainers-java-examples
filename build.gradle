@@ -1,0 +1,40 @@
+allprojects {
+    apply plugin: 'maven'
+
+    group = 'org.testcontainers.examples'
+    version = 'NOVERSION'
+}
+
+subprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+
+    repositories {
+        mavenLocal()
+
+        maven { url "https://jitpack.io" }
+        maven { url "http://repo.maven.apache.org/maven2" }
+    }
+
+
+    dependencies {
+
+        project.ext.testcontainersGroup = 'com.github.testcontainers.testcontainers-java'
+        project.ext.testcontainersName = 'testcontainers'
+        project.ext.testcontainersVersion = '-SNAPSHOT'
+        //project.ext.testcontainersVersion = '1.4.3'
+
+        compile group: "${testcontainersGroup}", name: "${testcontainersName}", version: "${testcontainersVersion}"
+        testCompile group: 'org.rnorth.visible-assertions', name: 'visible-assertions', version: '1.0.5'
+        testCompile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+        compileOnly group: 'junit', name: 'junit', version: '4.12'
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.6'
+    }
+
+
+}
