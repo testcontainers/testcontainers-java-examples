@@ -1,5 +1,7 @@
 # testcontainers-java-examples
 
+# ARCHIVED! Please see [examples in the main testcontainers-java repository](https://github.com/testcontainers/testcontainers-java/tree/master/examples)
+
 > Practical examples of using Testcontainers.
 
 The code in this repository accompanies the following blog posts:
